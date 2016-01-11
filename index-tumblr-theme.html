@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {block:Description}
+    <meta name="description" content="{MetaDescription}"/>
+    {/block:Description}
+
+    <meta name="color:Pure Sidebar" content=""/>
+    <meta name="if:Social" content="1"/>
+    <meta name="text:Google Analytics ID" content=""/>
+    <meta name="text:Twitter Username" content=""/>
+    <meta name="text:Instagram Username" content="Pure"/>
+    <meta name="text:Facebook Username" content="Pure"/>
+    <meta name="text:Youtube Username" content="Pure"/>
+    <meta name="text:Website url" content="lostthecow.com"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
+<title>{block:SearchPage}Search results for "{SearchQuery}" - {/block:SearchPage}{block:PostSummary}{PostSummary} -
+        {/block:PostSummary}{Title}</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://purecss.io/combo/1.18.13?/css/layouts/side-menu-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="http://purecss.io/combo/1.18.13?/css/layouts/side-menu.css">
+    <!--<![endif]-->
+    
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+<!--<![endif]-->
+
+
+
+    <link rel="shortcut icon" href="{Favicon}"/>
+
+</head>
+
+
+<body>
+
+<div id="layout">
+
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+     <div id="menu">
+     
+    <div class="pure-menu">
+    
+        <a class="pure-menu-heading" href="{BlogURL}"><img src="{PortraitURL-128}"></a>
+        
+        <ul class="pure-menu-list">
+        
+       
+
+             {block:HasPages}
+             {block:Pages}
+                <li class="pure-menu-item">
+                	<a href="{URL}" class="pure-menu-link"> {Label}</a>
+                </li>
+             {/block:Pages}
+             {/block:HasPages}
+             
+           	<li class="pure-menu-item">
+                	<a href="/archive" class="pure-menu-link"> {lang:Archive}</a>
+                </li>
+                
+                <li class="pure-menu-item">
+                	<a href="{RSS}" class="pure-menu-link"> {lang:RSS}</a>
+                </li>
+                
+                {block:AskEnabled}
+                <li class="pure-menu-item">
+                	<a href="/ask" class="pure-menu-link"> {AskLabel}</a>
+                </li>
+                {/block:AskEnabled}
+            
+        </ul>
+        
+    </div>
+    
+</div>
+
+   <div id="main">
+        <div class="header">
+            <h1>{Title}</h1>
+            <h2>{Description}</h2>
+           
+        </div>
+        <br />
+        
+        <div class="content">
+
+            {block:Posts}
+
+
+                <div class="pure-g">
+
+                    {block:Text}
+                    
+                    <div class="grids-unit-bar pure-u-1-1">
+                    	<div class="textr">
+                            
+                            {block:Title}
+                            <h1>{Title}</h1>
+                            {/block:Title}
+                            <p>
+                                {block:Date}
+                                <a class="pure-menu-link">{DayOfMonth}-{ShortMonth}-{Year}</a>
+                                {/block:Date}
+
+                            </p>
+                        </div>
+
+                        <div class="grids-unit-bar pure-u-1-1">
+                            <p>{Body}</p>
+                        </div>
+                        {block:HasTags}
+	{block:Tags}
+		<a style="color: #cccccc;" href="{TagURL}">{Tag}</a>
+	{/block:Tags}
+{/block:HasTags}
+
+                        {block:PostNotes}{PostNotes}{/block:PostNotes}
+                   <hr></div><br />
+
+                    {/block:Text}
+
+                    <!--photo-->
+
+                    {block:Photo}
+                    <div class="grids-unit-bar pure-u-1-1">
+                    	<div class="textr">
+                           
+                            {block:Title}
+                            <h1>{Title}</h1>
+                            {/block:Title}
+                            <p>
+                                {block:Date}
+                                <a class="pure-menu-link">{DayOfMonth}-{ShortMonth}-{Year}</a>
+                                {/block:Date}
+
+                            </p>
+                        </div>
+
+                        <div class="grids-unit-bar pure-u-1-1">
+                            <center><img class="pure-img" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/></center>
+                            {block:Caption}
+                            <div class="grids-unit-bar pure-u-1-1">
+
+                                <p>{Caption}</p>
+                            </div>
+                            {/block:Caption}
+
+
+                        </div>
+                         {block:HasTags}
+	{block:Tags}
+		<a style="color: #cccccc;" href="{TagURL}">{Tag}</a>
+	{/block:Tags}
+{/block:HasTags}
+
+                        {block:PostNotes}{PostNotes}{/block:PostNotes}
+                    <hr></div><br />
+                    {/block:Photo}
+
+                    <!--Chat-->
+
+
+                    <!--links-->
+
+                    {block:Link}
+                    <div class="grids-unit-bar pure-u-1-1">
+                    	<div class="textr">
+                          
+                            {block:Title}
+                            <h1>{Title}</h1>
+                            {/block:Title}
+                            <p>
+                                {block:Date}
+                                <a class="pure-menu-link">{DayOfMonth}-{ShortMonth}-{Year}</a>
+                                {/block:Date}
+
+                            </p>
+                        </div>
+
+                        <div class="linky">
+                                <h1>{LinkOpenTag}<a href="{URL}" {Target}>{Name}</a>{LinkCloseTag}
+                            </h1>
+                            {block:Description}
+                            <h2>{Description}</h2>
+                            {/block:Description}
+                        </div>
+                         {block:HasTags}
+	{block:Tags}
+		<a style="color: #cccccc;" href="{TagURL}">{Tag}</a>
+	{/block:Tags}
+{/block:HasTags}
+
+                        {block:PostNotes}{PostNotes}{/block:PostNotes}
+                    <hr></div><br />
+                    {/block:Link}
+
+
+
+                    <!--quotes-->
+
+                    {block:Quote}
+                    <div class="grids-unit-bar pure-u-1-1">
+                    	<div class="textr">
+                           
+                            <p>
+                                {block:Date}
+                                <a class="pure-menu-link">{DayOfMonth}-{ShortMonth}-{Year}</a>
+                                {/block:Date}
+
+                            </p>
+                        </div>
+
+                        <div class="quote"><h1>"{Quote}"</h1>
+
+                             {block:Source}
+                            <h2>- {Source}</h2></div>
+                            {/block:Source}
+                             {block:HasTags}
+	{block:Tags}
+		<a style="color: #cccccc;" href="{TagURL}">{Tag}</a>
+	{/block:Tags}
+{/block:HasTags}
+
+                        
+                        {block:PostNotes}{PostNotes}{/block:PostNotes}
+                   <hr></div><br />
+
+
+                    {/block:Quote}
+
+
+                    <!--audio-->
+                    {block:Audio}
+
+                    <div class="grids-unit-bar pure-u-1-1">
+                    	<div class="textr">
+                          
+                            <p>
+                                {block:Date}
+                                <a class="pure-menu-link">{DayOfMonth}-{ShortMonth}-{Year}</a>
+                                {/block:Date}
+
+                            </p>
+                        </div>
+
+                        <div class="grids-unit-bar pure-u-1-1">
+
+                            <center>{AudioPlayerBlack}</center>
+
+                            {block:Caption}
+                            <p>{Caption}</p>
+                            {/block:Caption}
+                        </div>
+                         {block:HasTags}
+	{block:Tags}
+		<a style="color: #cccccc;" href="{TagURL}">{Tag}</a>
+	{/block:Tags}
+{/block:HasTags}
+
+                        {block:PostNotes}{PostNotes}{/block:PostNotes}
+                    <hr></div><br />
+                    {/block:Audio}
+
+
+                    <!--video-->
+
+
+
+
+                    {block:Video}
+                    <div class="grids-unit-bar pure-u-1-1">
+                    	<div class="textr">
+                         
+                            <p>
+                                {block:Date}
+                                <a class="pure-menu-link">{DayOfMonth}-{ShortMonth}-{Year}</a>
+                                {/block:Date}
+
+                            </p>
+                        </div>
+
+                        <div class="grids-unit-bar pure-u-1-1">
+                            <p>
+
+                           <center><div class="pure-img-responsive">{Video-500}</div></center>
+                            </p>
+                            {block:Caption}
+                            <p>{Caption}</p>
+                            {/block:Caption}
+                        </div>
+                         {block:HasTags}
+	{block:Tags}
+		<a style="color: #cccccc;" href="{TagURL}">{Tag}</a>
+	{/block:Tags}
+{/block:HasTags}
+
+                        {block:PostNotes}{PostNotes}{/block:PostNotes}
+                    <hr></div><br />
+                    {/block:Video}
+
+
+                </div>
+                {/block:Posts}
+
+
+                {block:Pagination}
+                <div class="pagination">
+                    <div class="previous">
+                        {block:PreviousPage}<a class="pure-button pure-button-primary" href="{PreviousPage}">&#8592; {lang:Previous}</a>{/block:PreviousPage}
+                        &nbsp;
+                    </div>
+                    <div class="count">
+                        {lang:CurrentPage of TotalPages}
+                    </div>
+                    <div class="next">
+                        {block:NextPage}<a class="pure-button pure-button-primary" href="{NextPage}">{lang:Next} &#8594;</a>{/block:NextPage}
+                        &nbsp;
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                {/block:Pagination}
+
+                <br /><br /><br /><br /><footer class="footer">
+                
+                
+                <center><a class="pure-button" href="{BlogURL}">{Title} &copy;</a></center>
+                
+               
+                    
+                </footer>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+<script src="http://yui.yahooapis.com/3.12.0/build/yui/yui-min.js"></script>
+<script>
+    YUI().use('node-base', 'node-event-delegate', function (Y) {
+        // This just makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        Y.one('body').delegate('click', function (e) {
+            e.preventDefault();
+        }, 'a[href="#"]');
+    });
+
+
+</script>
+{block:IfGoogleAnalyticsID}
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '{text:Google Analytics ID}']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+{/block:IfGoogleAnalyticsID}
+
+<script src="http://purecss.io/js/ui.js"></script>
+</body>
+</html>
